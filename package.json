@@ -1,20 +1,42 @@
 {
-  "name": "my-library",
+  "name": "@jaykumarcunomial/my-library",
   "version": "0.0.1",
   "description": "A react component library",
   "scripts": {
-    "rollup": "rollup -c"
+    "rollup": "rollup -c",
+    "test": "jest",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "author": "Jay Kumar",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.23.3",
+    "@babel/preset-env": "^7.23.3",
+    "@babel/preset-react": "^7.23.3",
+    "@babel/preset-typescript": "^7.23.3",
     "@rollup/plugin-commonjs": "^25.0.7",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-typescript": "^11.1.5",
+    "@storybook/addon-essentials": "^7.5.3",
+    "@storybook/addon-interactions": "^7.5.3",
+    "@storybook/addon-links": "^7.5.3",
+    "@storybook/addon-onboarding": "^1.0.8",
+    "@storybook/blocks": "^7.5.3",
+    "@storybook/react": "^7.5.3",
+    "@storybook/react-webpack5": "^7.5.3",
+    "@storybook/testing-library": "^0.2.2",
+    "@testing-library/react": "^14.1.2",
+    "@types/jest": "^29.5.10",
     "@types/react": "^18.2.38",
+    "babel-jest": "^29.7.0",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
     "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "rollup": "^4.5.1",
     "rollup-plugin-dts": "^6.1.0",
+    "storybook": "^7.5.3",
     "typescript": "^5.3.2"
   },
   "peerDependencies": {
@@ -26,5 +48,7 @@
     "dist"
   ],
   "types": "dist/index.d.ts",
-  "type": "module"
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/jaykumarcunomial"
+  }
 }
