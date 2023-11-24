@@ -1,8 +1,9 @@
 import React from "react";
+import "../../styles/tailwind.css";
 
 import Header from "./Header";
 import MonthView from "./MonthView";
-import "../../styles/tailwind.css";
+
 import WeekView from "./WeekView";
 
 interface Event {
