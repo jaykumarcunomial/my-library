@@ -11,14 +11,14 @@ const WeekView: React.FC<WeekViewProps> = () => {
     // Set the container scroll position based on the current time.
     const currentMinute = new Date().getHours() * 60;
     if (container.current) {
+      const { scrollHeight } = container.current;
+      const navHeight = containerNav.current?.offsetHeight || 0;
+      const offsetHeight = containerOffset.current?.offsetHeight || 0;
+
       container.current.scrollTop =
-        ((container.current.scrollHeight -
-          (containerNav.current?.offsetHeight || 0) -
-          (containerOffset.current?.offsetHeight || 0)) *
-          currentMinute) /
-        1440;
+        ((scrollHeight - navHeight - offsetHeight) * currentMinute) / 1440;
     }
-  }, []);
+  }, [container.current, containerNav.current, containerOffset.current]);
 
   return (
     <>
