@@ -3,27 +3,27 @@ import React, { useEffect, useRef } from "react";
 interface WeekViewProps {}
 
 const WeekView: React.FC<WeekViewProps> = () => {
-  const container = useRef<HTMLDivElement>(null);
-  const containerNav = useRef<HTMLDivElement>(null);
-  const containerOffset = useRef<HTMLDivElement>(null);
+  // const container = useRef<HTMLDivElement>(null);
+  // const containerNav = useRef<HTMLDivElement>(null);
+  // const containerOffset = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    // Set the container scroll position based on the current time.
-    const currentMinute = new Date().getHours() * 60;
-    if (container.current) {
-      const { scrollHeight } = container.current;
-      const navHeight = containerNav.current?.offsetHeight || 0;
-      const offsetHeight = containerOffset.current?.offsetHeight || 0;
+  // useEffect(() => {
+  //   // Set the container scroll position based on the current time.
+  //   const currentMinute = new Date().getHours() * 60;
+  //   if (container.current) {
+  //     const { scrollHeight } = container.current;
+  //     const navHeight = containerNav.current?.offsetHeight || 0;
+  //     const offsetHeight = containerOffset.current?.offsetHeight || 0;
 
-      container.current.scrollTop =
-        ((scrollHeight - navHeight - offsetHeight) * currentMinute) / 1440;
-    }
-  }, [container.current, containerNav.current, containerOffset.current]);
+  //     container.current.scrollTop =
+  //       ((scrollHeight - navHeight - offsetHeight) * currentMinute) / 1440;
+  //   }
+  // }, [container.current, containerNav.current, containerOffset.current]);
 
   return (
     <>
       <div
-        ref={container}
+        // ref={container}
         className="isolate flex flex-auto flex-col overflow-auto bg-white"
       >
         <div
@@ -31,7 +31,7 @@ const WeekView: React.FC<WeekViewProps> = () => {
           className="flex max-w-full flex-none flex-col sm:max-w-none md:max-w-full"
         >
           <div
-            ref={containerNav}
+            // ref={containerNav}
             className="sticky top-0 z-30 flex-none bg-white shadow ring-1 ring-black ring-opacity-5 sm:pr-8"
           >
             <div className="grid grid-cols-7 text-sm leading-6 text-gray-500 sm:hidden">
@@ -168,7 +168,10 @@ const WeekView: React.FC<WeekViewProps> = () => {
                 className="col-start-1 col-end-2 row-start-1 grid divide-y divide-gray-100"
                 style={{ gridTemplateRows: "repeat(48, minmax(3.5rem, 1fr))" }}
               >
-                <div ref={containerOffset} className="row-end-1 h-7"></div>
+                <div
+                  //  ref={containerOffset}
+                  className="row-end-1 h-7"
+                ></div>
                 <div>
                   <div className="sticky left-0 z-20 -ml-14 -mt-2.5 w-14 pr-2 text-right text-xs leading-5 text-gray-400">
                     12AM
