@@ -3,27 +3,27 @@ import React, { useEffect, useRef } from "react";
 interface WeekViewProps {}
 
 const WeekView: React.FC<WeekViewProps> = () => {
-  // const container = useRef<HTMLDivElement>(null);
-  // const containerNav = useRef<HTMLDivElement>(null);
-  // const containerOffset = useRef<HTMLDivElement>(null);
+  const container = useRef<HTMLDivElement>(null);
+  const containerNav = useRef<HTMLDivElement>(null);
+  const containerOffset = useRef<HTMLDivElement>(null);
 
-  // useEffect(() => {
-  //   // Set the container scroll position based on the current time.
-  //   const currentMinute = new Date().getHours() * 60;
-  //   if (container.current) {
-  //     const { scrollHeight } = container.current;
-  //     const navHeight = containerNav.current?.offsetHeight || 0;
-  //     const offsetHeight = containerOffset.current?.offsetHeight || 0;
+  useEffect(() => {
+    // Set the container scroll position based on the current time.
+    const currentMinute = new Date().getHours() * 60;
+    if (container.current) {
+      const { scrollHeight } = container.current;
+      const navHeight = containerNav.current?.offsetHeight || 0;
+      const offsetHeight = containerOffset.current?.offsetHeight || 0;
 
-  //     container.current.scrollTop =
-  //       ((scrollHeight - navHeight - offsetHeight) * currentMinute) / 1440;
-  //   }
-  // }, [container.current, containerNav.current, containerOffset.current]);
+      container.current.scrollTop =
+        ((scrollHeight - navHeight - offsetHeight) * currentMinute) / 1440;
+    }
+  }, [container.current, containerNav.current, containerOffset.current]);
 
   return (
     <>
       <div
-        // ref={container}
+        ref={container}
         className="isolate flex flex-auto flex-col overflow-auto bg-white"
       >
         <div
