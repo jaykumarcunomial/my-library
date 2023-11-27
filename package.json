@@ -1,6 +1,6 @@
 {
   "name": "@jaykumarcunomial/my-library",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "A react component library",
   "scripts": {
     "rollup": "rollup -c",
