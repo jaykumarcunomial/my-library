@@ -5,6 +5,8 @@ import Header from "./Header";
 import MonthView from "./MonthView";
 
 import WeekView from "./WeekView";
+import DayView from "./DayView";
+import YearView from "./YearView";
 
 interface Event {
   id: number;
@@ -153,6 +155,8 @@ const Calendar = (props: CalendarProps) => {
 
       {props.type === "month" && <MonthView days={days} />}
       {props.type === "week" && <WeekView />}
+      {props.type === "day" && <DayView />}
+      {props.type === "year" && <YearView />}
     </div>
   );
 };
